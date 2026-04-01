@@ -57,10 +57,10 @@ runs:
           cd $GITHUB_WORKSPACE/device_kernel
 
           if [[ -n "${{ env.DEFCONFIG_SOURCE }}" ]]; then
-            if [[ -d "device_kernel/arch/arm64/configs" ]]; then
-                ${{ env.CURLX }} ${{ env.DEFCONFIG_SOURCE }} device_kernel/arch/arm64/configs/${{ env.DEFCONFIG_NAME }}
+            if [[ -d "arch/arm64/configs" ]]; then
+                ${{ env.CURLX }} ${{ env.DEFCONFIG_SOURCE }} arch/arm64/configs/${{ env.DEFCONFIG_NAME }}
             else
-                ${{ env.CURLX }} ${{ env.DEFCONFIG_SOURCE }} device_kernel/arch/arm/configs/${{ env.DEFCONFIG_NAME }}
+                ${{ env.CURLX }} ${{ env.DEFCONFIG_SOURCE }} arch/arm/configs/${{ env.DEFCONFIG_NAME }}
             fi
           elif [[ -z "${{ env.DEFCONFIG_ORIGIN_IMAGE }}" ]]; then
             if [[ "${{ env.DEFCONFIG_FROM_BOOT }}" == "true" ]]; then
@@ -76,7 +76,7 @@ runs:
                 fi
             else
                 ${{ env.CURLX }} "${{ env.DEFCONFIG_ORIGIN_IMAGE }}" $GITHUB_WORKSPACE/device_kernel/Image
-                if [[ -d "device_kernel/arch/arm64/configs" ]]; then
+                if [[ -d "arch/arm64/configs" ]]; then
                     $GITHUB_WORKSPACE/device_kernel/scripts/extract-ikconfig $GITHUB_WORKSPACE/device_kernel/Image > $GITHUB_WORKSPACE/device_kernel/arch/arm64/configs/${{ env.DEFCONFIG_NAME }}
                 else
                     $GITHUB_WORKSPACE/device_kernel/scripts/extract-ikconfig $GITHUB_WORKSPACE/device_kernel/Image > $GITHUB_WORKSPACE/device_kernel/arch/arm/configs/${{ env.DEFCONFIG_NAME }}
