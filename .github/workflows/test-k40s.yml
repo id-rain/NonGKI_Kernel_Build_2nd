@@ -47,8 +47,8 @@ env:
 
   BOOT_SOURCE: "https://mirrorbits.lineageos.org/full/munch/20260330/boot.img"  # If the PACK_METHOD is MKBOOTIMG, the BOOT.IMG download address needs to be filled in.
 
-  NEED_DTBO: false
-  NEED_SAFE_DTBO: false
+  NEED_DTBO: true
+  NEED_SAFE_DTBO: true
 
   ROM_TEXT: "lineageos_23.2"
 
