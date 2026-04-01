@@ -16,7 +16,8 @@ env:
   KERNEL_BRANCH: "lineage-23.2"
 
   # CLANG_SOURCE: "https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/LLVM-19.1.7-Linux-X64.tar.xz"
-  CLANG_SOURCE: "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.6/LLVM-20.1.6-Linux-X64.tar.xz"
+  # CLANG_SOURCE: "https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.6/LLVM-20.1.6-Linux-X64.tar.xz"
+  CLANG_SOURCE: "https://android.googlesource.com/toolchain/llvm-project/+archive/5e96669f06077099aa41290cdb4c5e6fa0f59349.tar.gz"
   CLANG_BRANCH: ""
 
   GCC_GNU: false
