@@ -124,6 +124,7 @@ jobs:
           # Only ${{ env.DEVICE_NAME }} use it.
           cd $GITHUB_WORKSPACE/device_kernel
           # Nothing
+          sed -i.bak 's/struct vm_area_struct \*vma;$/struct vm_area_struct *vma __maybe_unused;/g' fs/proc/task_mmu.c
 
       - name: 🧰 Patch Kernel of Re:Kernel
         uses: ./.github/workflows/patch-rekernel
